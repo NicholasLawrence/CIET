@@ -1,0 +1,5 @@
+{
+	
+	"dbPath": "mongodb://dbuser:resubd@ds139277.mlab.com:39277/ciet",
+	"port": 8080
+}

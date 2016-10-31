@@ -1,0 +1,17 @@
+{
+  "name": "ciet",
+  "version": "1.0.0",
+  "description": "can i eat this?",
+  "main": "host.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nicholas Lawrence",
+  "license": "ISC",
+  "dependencies": {
+    "mongodb": "^2.2.11",
+    "mongoose": "^4.6.5",
+    "restify": "^4.2.0",
+    "underscore": "^1.8.3"
+  }
+}
