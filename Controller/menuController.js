@@ -6,6 +6,9 @@ function menuController() {
 	this.getMenu = function(req, res, next) {
 		var last_id = req.params.last_menu_id;
 		var limit = req.params.limit;
+		var user_id = parseInt(req.params.user_id);
+		
+		if(!user_id)res.send(404);
 
 		Menu.find({_id : { $gt: last_id }})
 			.limit(parseInt(limit))
@@ -20,9 +23,10 @@ function menuController() {
 					console.log(err);
 				}
 				else {
-					UserPreferences.findOne({_id: 1}, function(err,userPrefResult){
+					UserPreferences.findOne({_id: user_id}, function(err,userPrefResult){
 						if(err) console.log(err)
 						else {
+							if(!userPrefResult.allergies) res.send(404);
 							menuResult.forEach(function(menu){
 								menu.items.forEach(function(item){
 									item.allergy_risks.forEach(function(allergy) {

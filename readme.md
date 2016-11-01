@@ -110,10 +110,11 @@ HTTP Response Code
 ##### Get Restaurant Menus
 The items on the menu will show the name and image of the dish, a brief description of the dish, the main ingredients, a list of severe allergy risks, and whether the user is allergic to an item in the dish and the severity.
 ###### Request
+* user_id: [Required] User ID 
 * last_menu_id: Used for paging through restaurant menus. V aluerestaurant menu at the end of last request or 0 to start at the beginning.
 * limit: Number of restaurant menus to return.
 ```http
-GET http://localhost:8080/menu/:last_menu_id/:limit
+GET http://localhost:8080/menu/:last_menu_id/:limit?user_id=:user_id
 ```
 ###### Response
 ```json
@@ -203,11 +204,13 @@ Image
 
  - Write Tests
  - Add Code Comments
- - Implement referential integrity checks on Allergies
+ - Implement referential integrity checks on Allergy Data
+ - Validate request parameters
  - Search by restaurant once CTO finishes restaurant & venue implementation
  - Improve static image serving regex for security
  - Set proper HTTP Headers, especially content-type and CORS
  - Swap out MongoDB's deprecated promise framework
+ - Encrypt config data
  
 ### Assumptions
  - Menu Item/Dish images are requested separately to accomodate caching in future modifications
