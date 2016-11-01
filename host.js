@@ -1,4 +1,5 @@
 var restify = require('restify');
+var config = require('./config')
 
 function respond(req, res, next) {
   res.send('hello ' + req.params.name);
@@ -7,7 +8,7 @@ function respond(req, res, next) {
 
 
 var server = restify.createServer({
-	name: 'WWUE',
+	name: 'CIET',
 	version: '1.0.0'
 });
 
@@ -16,7 +17,7 @@ server.use(restify.bodyParser());
 server.use(restify.queryParser());
 
 
-server.listen(8080, function() {
+server.listen(config.serverPort, function() {
   console.log('%s listening at %s', server.name, server.url);
 });
 
