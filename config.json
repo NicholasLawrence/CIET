@@ -1,5 +1,9 @@
 {
 	
 	"dbPath": "mongodb://dbuser:resubd@ds139277.mlab.com:39277/ciet",
-	"port": 8080
+	"serverPort": 8080,
+	"foursquare_client_id": "L0MBL34RSHC3KG4BC5B1BUOALYRZ10FKDDND254NZRP4BXV3",
+	"foursquare_client_secret": "GOOWP1LITFDXYLAWTBGVVBGYAUX0TPHYXWODP3GJXOLYS1KI",
+	"foursquare_location": "san francisco bay, CA",
+	"foursquare_version": 20161101
 }

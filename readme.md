@@ -8,7 +8,7 @@ CIET is a mobile application that will let users navigate through the menu of a 
   - View a restaurant's menu
   - View dish & related allergies
 
-### REST API v 1.0
+### REST API v 2.0.0
 
 CIET uses a number of open source projects to work properly:
 
@@ -199,6 +199,25 @@ GET http://localhost:8080/Images/:filename
 ```
 ##### Response
 Image
+
+#### Get Foursquare Venues : Version 2.0.0
+Restaurant/Venue data which originates from Foursquare
+##### Request
+* limit: limit number of results (max: 50)
+* offset: skip this number of results,
+* time: Pass any to retrieve results for any time of day. Omitting this parameter returns results targeted to the current time of day.
+* day: Pass any to retrieve results for any day of the week. Omitting this parameter returns results targeted to the current day of the week.
+* openNow: Boolean flag to only include venues that are open now
+* venuePhotos: Boolean flag to include a photo in the response for each venue, if one is available. Default is 0 (no photos). Photos are returned as part of the venue JSON object.
+* price: Comma separated list of price points. Currently the valid range of price points are [1,2,3,4], 1 being the least expensive, 4 being the most expensive. For food venues, in the United States, 1 is < $10 an entree, 2 is $10-$20 an entree, 3 is $20-$30 an entree, 4 is > $30 an entree.,
+* specials: Boolean flag to only include venues that have a special.
+
+```http
+GET http://localhost:8080/restaurant
+```
+
+##### Response
+Omitted due to size
 
 ### Todos
 
